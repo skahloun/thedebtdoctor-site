@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article | The Debt Doctor</title>
+  <meta name="description" content="Financial education from The Debt Doctor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .post-hero-img { width: 100%; max-height: 450px; object-fit: cover; border-radius: var(--radius); margin-bottom: 40px; box-shadow: var(--shadow-lg); }
+    .post-container { max-width: 780px; margin: 0 auto; padding: 120px 24px 60px; }
+    .post-tag { display: inline-block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 12px; }
+    .post-date { font-size: 0.9rem; color: var(--text-light); margin-bottom: 32px; }
+    .post-body { font-size: 1.1rem; line-height: 2; color: var(--text); }
+    .post-body p { margin-bottom: 1.5rem; }
+    .post-back { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 600; margin-bottom: 32px; }
+    .post-back:hover { color: var(--accent-dark); }
+    .post-not-found { text-align: center; padding: 200px 24px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&#9829;</div>
+        The Debt Doctor
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="financial-education.html">Education</a>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-primary">Free Consultation</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- POST CONTENT -->
+  <article class="post-container" id="postContent">
+    <p style="color: var(--text-light);">Loading article...</p>
+  </article>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Have Questions About Your Debt?</h2>
+      <p>Get personalized advice in a free, no-pressure consultation.</p>
+      <a href="contact.html" class="btn btn-primary">Get Free Advice &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="color: white;">
+            <div class="logo-icon">&#9829;</div>
+            The Debt Doctor
+          </div>
+          <p>Over 32 years helping people find clarity, reduce debt, and rebuild their financial lives with patience, empathy, and personalized guidance.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="financial-education.html">Education</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="financial-education.html">Financial Education</a>
+            <a href="financial-education.html#faq">FAQ</a>
+            <a href="how-it-works.html">Process Overview</a>
+          </div>
+        </div>
+        <div>
+          <h4>Get In Touch</h4>
+          <div class="footer-links">
+            <a href="mailto:help@clearpathdebt.com">help@clearpathdebt.com</a>
+            <a href="tel:18005551234">1-800-555-1234</a>
+          </div>
+          <div class="social-links" style="margin-top: 20px;">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">&#9675;</a>
+            <a href="#" class="social-link" aria-label="TikTok">&#9835;</a>
+            <a href="#" class="social-link" aria-label="Twitter">X</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Debt Doctor. All rights reserved.</p>
+        <p>Helping people find financial freedom since 1994.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = 'https://ubdsxxagzrsvtehjslvf.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_hwfNxSbvnZze_FESMRSubg_tVYdkNWA';
+    const DEFAULT_IMG = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80';
+
+    const defaultPosts = [
+      { id: 'default-1', tag: 'Fundamentals', title: 'What Is Debt \u2014 Really?', image_url: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80', content: 'Debt is money you owe to lenders, whether through credit cards, personal loans, medical bills, or other obligations. But not all debt is the same. Understanding the difference between \u201cgood debt\u201d and \u201cbad debt\u201d is the foundation of financial literacy.\n\nGood debt is borrowing that helps you build wealth over time \u2014 like a mortgage or student loans that increase your earning potential. Bad debt, on the other hand, is high-interest consumer debt like credit cards that costs you money without building any value.\n\nHigh-interest consumer debt is the silent wealth killer that keeps millions trapped. When you only make minimum payments on a credit card with 24% APR, the majority of your payment goes to interest \u2014 not reducing what you owe. A $10,000 balance at 24% with minimum payments could take over 30 years to pay off and cost you over $25,000 in interest alone.\n\nThe first step to freedom is understanding exactly what kind of debt you have, what it\u2019s costing you, and what your options are for tackling it strategically.' },
+      { id: 'default-2', tag: 'Strategy', title: 'How to Actually Reduce Your Debt', image_url: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80', content: 'Start by understanding exactly what you owe and at what interest rates. Then prioritize: attack the highest-interest debt first (avalanche method) or knock out the smallest balances for momentum (snowball method).\n\nThe Avalanche Method: List all debts by interest rate, highest first. Make minimum payments on everything, then throw every extra dollar at the highest-rate debt. This saves you the most money mathematically.\n\nThe Snowball Method: List all debts by balance, smallest first. Pay minimums on everything, then attack the smallest balance. When it\u2019s gone, roll that payment into the next smallest. The quick wins keep you motivated.\n\nBeyond choosing a method, negotiate lower rates \u2014 a simple phone call to your credit card company can sometimes reduce your APR by several points. Consolidate where it makes sense, and always pay more than the minimum when you can.\n\nThe most important thing is to start. Any progress is better than no progress, and the sooner you begin, the less interest you\u2019ll pay over time.' },
+      { id: 'default-3', tag: 'Credit', title: 'How Debt Affects Your Credit Score', image_url: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80', content: 'Unpaid or high-balance debt can significantly lower your credit score, affecting your ability to get loans, housing, and even jobs. But here\u2019s the good news: as you manage payments and reduce balances, your score can recover and even exceed where it was before.\n\nYour credit utilization ratio \u2014 the percentage of your available credit you\u2019re using \u2014 is one of the biggest factors in your score. Keeping it below 30% is good; below 10% is excellent.\n\nPayment history is the single largest factor. Even one missed payment can drop your score significantly, but a consistent track record of on-time payments builds it back up steadily.\n\nIt\u2019s never too late to start rebuilding. Many people who\u2019ve gone through debt relief programs end up with better credit scores than they had before they started, because they\u2019ve eliminated the debt that was dragging them down.' },
+      { id: 'default-4', tag: 'Budgeting', title: 'The Budget That Actually Works', image_url: 'https://images.unsplash.com/photo-1553729459-afe8f2e2e9de?w=600&q=80', content: 'Forget complicated spreadsheets. The best budget is the one you\u2019ll actually use. Start with the 50/30/20 rule: 50% for needs, 30% for wants, 20% for savings and debt payoff.\n\nNeeds are non-negotiable expenses: housing, utilities, groceries, insurance, minimum debt payments, and transportation. Wants are everything else you enjoy but could live without: dining out, entertainment, subscriptions, shopping. Savings and debt payoff is where you build your future.\n\nTrack your spending for just one month and you\u2019ll be shocked at where the money goes \u2014 and where you can find extra to put toward freedom. Small daily expenses like coffee, delivery fees, and impulse purchases often add up to hundreds per month.\n\nThe key is consistency, not perfection. If you overspend one week, adjust the next. The goal is awareness and progress, not rigid restriction that leads to burnout.' },
+      { id: 'default-5', tag: 'Your Rights', title: 'Is Debt Relief Legal? Know Your Rights', image_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80', content: 'Yes, debt relief programs are legal and follow specific guidelines designed to protect consumers. The Fair Debt Collection Practices Act (FDCPA) gives you rights against harassment.\n\nUnder the FDCPA, debt collectors cannot call you before 8 AM or after 9 PM, use threatening or abusive language, contact you at work if you ask them to stop, or misrepresent the amount you owe.\n\nYou have the right to request debt validation \u2014 written proof that the debt is yours and the amount is correct. You also have the right to dispute any debt you believe is inaccurate.\n\nUnderstanding these protections is crucial \u2014 you have more power than you think when dealing with creditors and collectors. Many people pay debts they don\u2019t actually owe simply because they didn\u2019t know they could challenge them.' },
+      { id: 'default-6', tag: 'Mindset', title: 'The Psychology of Debt', image_url: 'https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=600&q=80', content: 'Debt is as much emotional as it is financial. The shame, anxiety, and avoidance that come with debt create a cycle that keeps people stuck.\n\nMany people avoid looking at their statements, skip calls from unknown numbers, and push the problem to the back of their mind. This avoidance feels protective in the moment, but it allows interest to compound and balances to grow unchecked.\n\nBreaking free starts with confronting the numbers, forgiving yourself, and taking that first small step. You didn\u2019t get into debt overnight, and you won\u2019t get out overnight \u2014 but you CAN get out.\n\nRemember: debt doesn\u2019t define your worth or your character. Most people in debt are hardworking individuals who were never taught how money and interest truly work. Seeking help is a sign of strength, not weakness.' },
+    ];
+
+    function escapeHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    function renderPost(post) {
+      document.title = `${post.title} | The Debt Doctor`;
+      const date = post.created_at ? new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+      const contentHtml = escapeHtml(post.content).split('\n').filter(p => p.trim()).map(p => `<p>${p}</p>`).join('');
+
+      document.getElementById('postContent').innerHTML = `
+        <a href="financial-education.html" class="post-back">&larr; Back to Education</a>
+        <img class="post-hero-img" src="${post.image_url || DEFAULT_IMG}" alt="${escapeHtml(post.title)}">
+        <span class="post-tag">${escapeHtml(post.tag || 'General')}</span>
+        <h1 style="margin-bottom: 12px;">${escapeHtml(post.title)}</h1>
+        ${date ? `<p class="post-date">${date}</p>` : ''}
+        <div class="post-body">${contentHtml}</div>
+      `;
+    }
+
+    function showNotFound() {
+      document.getElementById('postContent').innerHTML = `
+        <div class="post-not-found">
+          <h2>Article Not Found</h2>
+          <p style="color: var(--text-light); margin-bottom: 24px;">This article may have been removed or the link is incorrect.</p>
+          <a href="financial-education.html" class="btn btn-primary">&larr; Back to Education</a>
+        </div>
+      `;
+    }
+
+    async function loadPost() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      const defaultId = params.get('default');
+
+      if (defaultId) {
+        const post = defaultPosts.find(p => p.id === defaultId);
+        if (post) { renderPost(post); } else { showNotFound(); }
+        return;
+      }
+
+      if (!id) { showNotFound(); return; }
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/blog_posts?id=eq.${id}`, {
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': `Bearer ${SUPABASE_KEY}`,
+          }
+        });
+        const posts = await res.json();
+        if (posts.length) { renderPost(posts[0]); } else { showNotFound(); }
+      } catch (e) {
+        showNotFound();
+      }
+    }
+
+    loadPost();
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
