@@ -60,68 +60,67 @@
         <h2>Things Everyone Should Know</h2>
         <p>Financial literacy changes lives. Here are the fundamentals that can transform how you think about money and debt.</p>
       </div>
-      <div class="articles-grid">
-        <div class="article-card fade-in">
-          <div class="article-card-img">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Understanding debt">
-          </div>
-          <div class="article-card-body">
-            <span class="article-tag">Fundamentals</span>
-            <h3>What Is Debt &mdash; Really?</h3>
-            <p>Debt is money you owe to lenders, whether through credit cards, personal loans, medical bills, or other obligations. But not all debt is the same. Understanding the difference between "good debt" and "bad debt" is the foundation of financial literacy. High-interest consumer debt is the silent wealth killer that keeps millions trapped.</p>
-          </div>
-        </div>
-        <div class="article-card fade-in">
-          <div class="article-card-img">
-            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80" alt="Reducing debt">
-          </div>
-          <div class="article-card-body">
-            <span class="article-tag">Strategy</span>
-            <h3>How to Actually Reduce Your Debt</h3>
-            <p>Start by understanding exactly what you owe and at what interest rates. Then prioritize: attack the highest-interest debt first (avalanche method) or knock out the smallest balances for momentum (snowball method). Negotiate lower rates, consolidate where it makes sense, and always pay more than the minimum when you can.</p>
-          </div>
-        </div>
-        <div class="article-card fade-in">
-          <div class="article-card-img">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Credit score">
-          </div>
-          <div class="article-card-body">
-            <span class="article-tag">Credit</span>
-            <h3>How Debt Affects Your Credit Score</h3>
-            <p>Unpaid or high-balance debt can significantly lower your credit score, affecting your ability to get loans, housing, and even jobs. But here's the good news: as you manage payments and reduce balances, your score can recover and even exceed where it was before. It's never too late to start rebuilding.</p>
-          </div>
-        </div>
-        <div class="article-card fade-in">
-          <div class="article-card-img">
-            <img src="https://images.unsplash.com/photo-1553729459-afe8f2e2e9de?w=600&q=80" alt="Budgeting basics">
-          </div>
-          <div class="article-card-body">
-            <span class="article-tag">Budgeting</span>
-            <h3>The Budget That Actually Works</h3>
-            <p>Forget complicated spreadsheets. The best budget is the one you'll actually use. Start with the 50/30/20 rule: 50% for needs, 30% for wants, 20% for savings and debt payoff. Track your spending for just one month and you'll be shocked at where the money goes &mdash; and where you can find extra to put toward freedom.</p>
-          </div>
-        </div>
-        <div class="article-card fade-in">
-          <div class="article-card-img">
-            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80" alt="Know your rights">
-          </div>
-          <div class="article-card-body">
-            <span class="article-tag">Your Rights</span>
-            <h3>Is Debt Relief Legal? Know Your Rights</h3>
-            <p>Yes, debt relief programs are legal and follow specific guidelines designed to protect consumers. The Fair Debt Collection Practices Act (FDCPA) gives you rights against harassment. Understanding these protections is crucial &mdash; you have more power than you think when dealing with creditors and collectors.</p>
-          </div>
-        </div>
-        <div class="article-card fade-in">
-          <div class="article-card-img">
-            <img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=600&q=80" alt="Financial freedom">
-          </div>
-          <div class="article-card-body">
-            <span class="article-tag">Mindset</span>
-            <h3>The Psychology of Debt</h3>
-            <p>Debt is as much emotional as it is financial. The shame, anxiety, and avoidance that come with debt create a cycle that keeps people stuck. Breaking free starts with confronting the numbers, forgiving yourself, and taking that first small step. You didn't get into debt overnight, and you won't get out overnight &mdash; but you CAN get out.</p>
-          </div>
-        </div>
+      <!-- Dynamic blog posts from Supabase load first, then static defaults below -->
+      <div class="articles-grid" id="blogPostsGrid">
+        <p style="color: var(--text-light); text-align: center; grid-column: 1/-1;">Loading posts...</p>
       </div>
+
+      <script>
+        const SUPABASE_URL = 'https://ubdsxxagzrsvtehjslvf.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_hwfNxSbvnZze_FESMRSubg_tVYdkNWA';
+        const DEFAULT_IMG = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80';
+
+        const defaultPosts = [
+          { tag: 'Fundamentals', title: 'What Is Debt \u2014 Really?', image_url: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80', content: 'Debt is money you owe to lenders, whether through credit cards, personal loans, medical bills, or other obligations. But not all debt is the same. Understanding the difference between \u201cgood debt\u201d and \u201cbad debt\u201d is the foundation of financial literacy. High-interest consumer debt is the silent wealth killer that keeps millions trapped.' },
+          { tag: 'Strategy', title: 'How to Actually Reduce Your Debt', image_url: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80', content: 'Start by understanding exactly what you owe and at what interest rates. Then prioritize: attack the highest-interest debt first (avalanche method) or knock out the smallest balances for momentum (snowball method). Negotiate lower rates, consolidate where it makes sense, and always pay more than the minimum when you can.' },
+          { tag: 'Credit', title: 'How Debt Affects Your Credit Score', image_url: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80', content: 'Unpaid or high-balance debt can significantly lower your credit score, affecting your ability to get loans, housing, and even jobs. But here\u2019s the good news: as you manage payments and reduce balances, your score can recover and even exceed where it was before. It\u2019s never too late to start rebuilding.' },
+          { tag: 'Budgeting', title: 'The Budget That Actually Works', image_url: 'https://images.unsplash.com/photo-1553729459-afe8f2e2e9de?w=600&q=80', content: 'Forget complicated spreadsheets. The best budget is the one you\u2019ll actually use. Start with the 50/30/20 rule: 50% for needs, 30% for wants, 20% for savings and debt payoff. Track your spending for just one month and you\u2019ll be shocked at where the money goes \u2014 and where you can find extra to put toward freedom.' },
+          { tag: 'Your Rights', title: 'Is Debt Relief Legal? Know Your Rights', image_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80', content: 'Yes, debt relief programs are legal and follow specific guidelines designed to protect consumers. The Fair Debt Collection Practices Act (FDCPA) gives you rights against harassment. Understanding these protections is crucial \u2014 you have more power than you think when dealing with creditors and collectors.' },
+          { tag: 'Mindset', title: 'The Psychology of Debt', image_url: 'https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=600&q=80', content: 'Debt is as much emotional as it is financial. The shame, anxiety, and avoidance that come with debt create a cycle that keeps people stuck. Breaking free starts with confronting the numbers, forgiving yourself, and taking that first small step. You didn\u2019t get into debt overnight, and you won\u2019t get out overnight \u2014 but you CAN get out.' },
+        ];
+
+        function escapeHtml(str) {
+          const d = document.createElement('div');
+          d.textContent = str;
+          return d.innerHTML;
+        }
+
+        function renderPosts(posts) {
+          const grid = document.getElementById('blogPostsGrid');
+          grid.innerHTML = posts.map(post => `
+            <div class="article-card fade-in visible">
+              <div class="article-card-img">
+                <img src="${post.image_url || DEFAULT_IMG}" alt="${escapeHtml(post.title)}">
+              </div>
+              <div class="article-card-body">
+                <span class="article-tag">${escapeHtml(post.tag || 'General')}</span>
+                <h3>${escapeHtml(post.title)}</h3>
+                <p>${escapeHtml(post.content).substring(0, 280)}${post.content.length > 280 ? '...' : ''}</p>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        async function loadBlogPosts() {
+          try {
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/blog_posts?order=created_at.desc`, {
+              headers: {
+                'apikey': SUPABASE_KEY,
+                'Authorization': `Bearer ${SUPABASE_KEY}`,
+              }
+            });
+            if (!res.ok) throw new Error('Failed to fetch');
+            const dbPosts = await res.json();
+            // Show DB posts first, then defaults
+            renderPosts([...dbPosts, ...defaultPosts]);
+          } catch (e) {
+            // If Supabase fails, just show defaults
+            renderPosts(defaultPosts);
+          }
+        }
+
+        loadBlogPosts();
+      </script>
     </div>
   </section>
 
