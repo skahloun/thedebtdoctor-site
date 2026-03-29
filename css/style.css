@@ -173,6 +173,7 @@ p { margin-bottom: 1rem; }
 }
 
 .nav-links a.active { color: var(--accent); }
+.nav-cta .btn.active { color: var(--white); }
 
 .nav-cta .btn { padding: 10px 24px; font-size: 0.9rem; }
 
